@@ -1,0 +1,1118 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace JogoDaVelha2
+{
+    public partial class Form1 : Form
+    {
+        string x = "X", o = "O";
+        string dif;
+        string vec;
+        bool venc = false, botao9 = false, botao6 = false, botao7 = false, botao8 = false, botao10 = false, botao11 = false, botao12 = false, botao13 = false, botao14 = false;
+        bool botao16 = false, botao17 = false, botao18 = false, botao19 = false, botao20 = false, botao21 = false, botao22 = false, botao23 = false, botao24 = false;
+        private void vezbot()
+        {
+            bool vez = true;
+            if (venc == false)
+            {
+                for (int i = 1; i <= 3; i++)
+                {
+                    if (i == 3 && vez == true)
+                    {
+                        if (vez == true)
+                        {
+                            for (int r = 1; r <= 3; r++)
+                            {
+                                if (r == 3 && vez == true)
+                                {
+                                    bool looping = false;
+
+                                    if (vez == true)
+                                    {
+                                        looping = true;
+                                    }
+
+
+                                    while (looping != false)
+                                    {
+                                        Random rdn = new Random();
+                                        int randomizar = rdn.Next(1, 9);
+
+                                        switch (randomizar)
+                                        {
+                                            case 1:
+                                                if (botao16 == false && vez == true)
+                                                {
+                                                    button16.Text = "O";
+                                                    looping = false;
+                                                    vez = false;
+                                                    botao16 = true;
+                                                }
+                                                break;
+                                            case 2:
+                                                if (botao17 == false && vez == true)
+                                                {
+                                                    button17.Text = "O";
+                                                    looping = false;
+                                                    vez = false;
+                                                    botao17 = true;
+                                                }
+                                                break;
+                                            case 3:
+                                                if (botao18 == false && vez == true)
+                                                {
+                                                    button18.Text = "O";
+                                                    looping = false;
+                                                    vez = false;
+                                                    botao18 = true;
+                                                }
+                                                break;
+                                            case 4:
+                                                if (botao19 == false && vez == true)
+                                                {
+                                                    button19.Text = "O";
+                                                    looping = false;
+                                                    vez = false;
+                                                    botao19 = true;
+                                                }
+                                                break;
+                                            case 5:
+                                                if (botao20 == false && vez == true)
+                                                {
+                                                    button20.Text = "O";
+                                                    looping = false;
+                                                    vez = false;
+                                                    botao20 = true;
+                                                }
+                                                break;
+                                            case 6:
+                                                if (botao21 == false && vez == true)
+                                                {
+                                                    button21.Text = "O";
+                                                    looping = false;
+                                                    vez = false;
+                                                    botao21 = true;
+                                                }
+                                                break;
+                                            case 7:
+                                                if (botao22 == false && vez == true)
+                                                {
+                                                    button22.Text = "O";
+                                                    looping = false;
+                                                    vez = false;
+                                                    botao22 = true;
+                                                }
+                                                break;
+                                            case 8:
+                                                if (botao23 == false && vez == true)
+                                                {
+                                                    button23.Text = "O";
+                                                    looping = false;
+                                                    vez = false;
+                                                    botao23 = true;
+                                                }
+                                                break;
+                                            case 9:
+                                                if (botao24 == false && vez == true)
+                                                {
+                                                    button24.Text = "O";
+                                                    looping = false;
+                                                    vez = false;
+                                                    botao24 = true;
+                                                }
+                                                break;
+                                        }
+                                    }
+                                }
+
+                                if (button16.Text == "X" && button17.Text == "X" && button18.Text == "" && vez == true || button24.Text == "X" && button21.Text == "X" && button18.Text == "" && vez == true)
+                                {
+                                    button18.Text = "O";
+                                    botao18 = true;
+                                    vez = false;
+                                }
+
+                                else if (button16.Text == "X" && button18.Text == "X" && button17.Text == "" && vez == true || button20.Text == "X" && button23.Text == "X" && button17.Text == "" && vez == true)
+                                {
+                                    button17.Text = "O";
+                                    botao17 = true;
+                                    vez = false;
+                                }
+
+                                else if (button17.Text == "X" && button18.Text == "X" && button16.Text == "" && vez == true || button19.Text == "X" && button22.Text == "X" && button16.Text == "" && vez == true)
+                                {
+                                    button16.Text = "O";
+                                    botao16 = true;
+                                    vez = false;
+                                }
+                                else if (button19.Text == "X" && button20.Text == "X" && button21.Text == "" && vez == true || button18.Text == "X" && button24.Text == "X" && button21.Text == "" && vez == true)
+                                {
+                                    button21.Text = "O";
+                                    botao21 = true;
+                                    vez = false;
+                                }
+                                else if (button20.Text == "X" && button21.Text == "X" && button19.Text == "" && vez == true || button16.Text == "X" && button22.Text == "X" && button19.Text == "" && vez == true)
+                                {
+                                    button19.Text = "O";
+                                    botao19 = true;
+                                    vez = false;
+                                }
+                                else if (button19.Text == "X" && button21.Text == "X" && button20.Text == "" && vez == true || button17.Text == "X" && button23.Text == "X" && button20.Text == "" && vez == true)
+                                {
+                                    button20.Text = "O";
+                                    botao20 = true;
+                                    vez = false;
+                                }
+                                else if (button22.Text == "X" && button23.Text == "X" && button24.Text == "" && vez == true || button18.Text == "X" && button21.Text == "X" && button24.Text == "" && vez == true)
+                                {
+                                    botao24 = true;
+                                    button24.Text = "O";
+                                    vez = false;
+                                }
+
+                                else if (button23.Text == "X" && button24.Text == "X" && button22.Text == "" && vez == true || button16.Text == "X" && button19.Text == "X" && button22.Text == "" && vez == true)
+                                {
+                                    button22.Text = "O";
+                                    botao22 = true;
+                                    vez = false;
+                                }
+                                else if (button22.Text == "X" && button24.Text == "X" && button23.Text == "" && vez == true || button17.Text == "X" && button20.Text == "X" && button23.Text == "" && vez == true)
+                                {
+                                    button23.Text = "O";
+                                    botao23 = true;
+                                    vez = false;
+                                }
+                                else if (button16.Text == "X" && button20.Text == "X" && button24.Text == "" && vez == true)
+                                {
+                                    button24.Text = "O";
+                                    botao24 = true;
+                                    vez = false;
+                                }
+                                else if (button20.Text == "X" && button24.Text == "X" && button16.Text == "" && vez == true)
+                                {
+                                    button16.Text = "O";
+                                    botao16 = true;
+                                    vez = false;
+                                }
+                                else if (button16.Text == "X" && button24.Text == "X" && button20.Text == "" && vez == true || button22.Text == "X" && button18.Text == "X" && button20.Text == "" && vez == true)
+                                {
+                                    button20.Text = "O";
+                                    botao20 = true;
+                                    vez = false;
+                                }
+                                else if (button22.Text == "X" && button20.Text == "X" && button18.Text == "" && vez == true)
+                                {
+                                    button18.Text = "O";
+                                    botao18 = true;
+                                    vez = false;
+                                }
+                                else if (button18.Text == "X" && button20.Text == "X" && button22.Text == "" && vez == true)
+                                {
+                                    button22.Text = "O";
+                                    botao22 = true;
+                                    vez = false;
+                                }
+                                else if (button16.Text == "X" && button20.Text == "" && dif == "m" && vez == true || button24.Text == "X" && button20.Text == "" && dif == "m" && vez == true || button18.Text == "X" && button20.Text == "" && dif == "m" && vez == true || button22.Text == "X" && button20.Text == "" && dif == "m" && vez == true)
+                                {
+                                    button20.Text = "O";
+                                    botao20 = true;
+                                    vez = false;
+                                }
+                                else if (button16.Text == "X" && button24.Text == "X" && button17.Text == "" && vez == true && dif == "m" || button22.Text == "X" && button18.Text == "X" && button17.Text == "" && vez == true && dif == "m")
+                                {
+                                    button17.Text = "O";
+                                    botao17 = true;
+                                    vez = false;
+                                }
+                                else if (button20.Text == "X" && button16.Text == "" && dif == "m" && vez == true)
+                                {
+                                    button16.Text = "O";
+                                    botao16 = true;
+                                    vez = false;
+                                }
+                                else if (button16.Text == "X" && button21.Text == "X" && button18.Text == "" && vez == true && dif == "h" || button24.Text == "X" && button17.Text == "X" && button18.Text == "" && vez == true && dif == "h")
+                                {
+                                    button18.Text = "O";
+                                    botao18 = true;
+                                    vez = false;
+                                }
+                                else if (button17.Text == "X" && button22.Text == "X" && button16.Text == "" && vez == true && dif == "h" || button19.Text == "X" && button18.Text == "X" && button16.Text == "" && vez == true && dif == "h")
+                                {
+                                    button16.Text = "O";
+                                    botao16 = true;
+                                    vez = false;
+                                }
+                                else if (button23.Text == "X" && button16.Text == "X" && button22.Text == "" && vez == true && dif == "h" || button19.Text == "X" && button24.Text == "X" && button22.Text == "" && vez == true && dif == "h")
+                                {
+                                    button22.Text = "O";
+                                    botao22 = true;
+                                    vez = false;
+                                }
+                                else if (button18.Text == "X" && button23.Text == "X" && button24.Text == "" && vez == true && dif == "h" || button22.Text == "X" && button21.Text == "X" && button24.Text == "" && vez == true && dif == "h")
+                                {
+                                    button24.Text = "O";
+                                    botao24 = true;
+                                    vez = false;
+                                }
+                                else if (button16.Text == "X" && button24.Text == "X" && button17.Text == "" && vez == true && dif == "h" || button22.Text == "X" && button18.Text == "X" && button17.Text == "" && vez == true && dif == "h")
+                                {
+                                    button17.Text = "O";
+                                    botao17 = true;
+                                    vez = false;
+                                }
+                                else if (button19.Text == "X" && button17.Text == "X" && button16.Text == "" && vez == true && dif == "h")
+                                {
+                                    button16.Text = "O";
+                                    botao16 = true;
+                                    vez = false;
+                                }
+                                else if (button19.Text == "X" && button23.Text == "X" && button22.Text == "" && vez == true && dif == "h")
+                                {
+                                    button22.Text = "O";
+                                    botao22 = true;
+                                    vez = false;
+                                }
+                                else if (button23.Text == "X" && button21.Text == "X" && button24.Text == "" && vez == true && dif == "h")
+                                {
+                                    button24.Text = "O";
+                                    botao24 = true;
+                                    vez = false;
+                                }
+                                else if (button17.Text == "X" && button21.Text == "X" && button18.Text == "" && vez == true && dif == "h")
+                                {
+                                    button18.Text = "O";
+                                    botao18 = true;
+                                    vez = false;
+                                }
+                                else if (button20.Text == "" && dif == "h" && vez == true)
+                                {
+                                    button20.Text = "O";
+                                    botao20 = true;
+                                    vez = false;
+                                }
+                                else if (button20.Text == "X" && button16.Text == "" && dif == "h" && vez == true)
+                                {
+                                    button16.Text = "O";
+                                    botao16 = true;
+                                    vez = false;
+                                }
+                                else if (button20.Text == "X" && button24.Text == "X" && button22.Text == "" && dif == "h" && vez == true)
+                                {
+                                    button22.Text = "O";
+                                    botao22 = true;
+                                    vez = false;
+                                }
+                            }
+                        }
+                    }
+
+
+                    if (button16.Text == "O" && button17.Text == "O" && button18.Text == "" && vez == true || button24.Text == "O" && button21.Text == "O" && button18.Text == "" && vez == true)
+                    {
+                        button18.Text = "O";
+                        botao18 = true;
+                        vez = false;
+                    }
+
+                    else if (button16.Text == "O" && button18.Text == "O" && button17.Text == "" && vez == true || button20.Text == "O" && button23.Text == "O" && button17.Text == "" && vez == true)
+                    {
+                        button17.Text = "O";
+                        botao17 = true;
+                        vez = false;
+                    }
+
+                    else if (button17.Text == "O" && button18.Text == "O" && button16.Text == "" && vez == true || button19.Text == "O" && button22.Text == "O" && button16.Text == "" && vez == true)
+                    {
+                        button16.Text = "O";
+                        botao16 = true;
+                        vez = false;
+                    }
+                    else if (button19.Text == "O" && button20.Text == "O" && button21.Text == "" && vez == true || button18.Text == "O" && button24.Text == "O" && button21.Text == "" && vez == true)
+                    {
+                        button21.Text = "O";
+                        botao21 = true;
+                        vez = false;
+                    }
+                    else if (button20.Text == "O" && button21.Text == "O" && button19.Text == "" && vez == true || button16.Text == "O" && button22.Text == "O" && button19.Text == "" && vez == true)
+                    {
+                        button19.Text = "O";
+                        botao19 = true;
+                        vez = false;
+                    }
+                    else if (button19.Text == "O" && button21.Text == "O" && button20.Text == "" && vez == true || button17.Text == "O" && button23.Text == "O" && button20.Text == "" && vez == true)
+                    {
+                        button20.Text = "O";
+                        botao20 = true;
+                        vez = false;
+                    }
+                    else if (button22.Text == "O" && button23.Text == "O" && button24.Text == "" && vez == true || button18.Text == "O" && button21.Text == "O" && button24.Text == "" && vez == true)
+                    {
+                        botao24 = true;
+                        button24.Text = "O";
+                        vez = false;
+                    }
+
+                    else if (button23.Text == "O" && button24.Text == "O" && button22.Text == "" && vez == true || button16.Text == "O" && button19.Text == "O" && button22.Text == "" && vez == true)
+                    {
+                        button22.Text = "O";
+                        botao22 = true;
+                        vez = false;
+                    }
+                    else if (button22.Text == "O" && button24.Text == "O" && button23.Text == "" && vez == true || button17.Text == "O" && button20.Text == "O" && button23.Text == "" && vez == true)
+                    {
+                        button23.Text = "O";
+                        botao23 = true;
+                        vez = false;
+                    }
+                    else if (button16.Text == "O" && button20.Text == "O" && button24.Text == "" && vez == true)
+                    {
+                        button24.Text = "O";
+                        botao24 = true;
+                        vez = false;
+                    }
+                    else if (button20.Text == "O" && button24.Text == "O" && button16.Text == "" && vez == true)
+                    {
+                        button16.Text = "O";
+                        botao16 = true;
+                        vez = false;
+                    }
+                    else if (button16.Text == "O" && button24.Text == "O" && button20.Text == "" && vez == true || button22.Text == "O" && button18.Text == "O" && button20.Text == "" && vez == true)
+                    {
+                        button20.Text = "O";
+                        botao20 = true;
+                        vez = false;
+                    }
+                    else if (button22.Text == "O" && button20.Text == "O" && button18.Text == "" && vez == true)
+                    {
+                        button18.Text = "O";
+                        botao18 = true;
+                        vez = false;
+                    }
+                    else if (button18.Text == "O" && button20.Text == "O" && button22.Text == "" && vez == true)
+                    {
+                        button22.Text = "O";
+                        botao22 = true;
+                        vez = false;
+                    }
+                }
+            }
+        }
+        private void Vencex2()
+        {
+            if (button16.Text == "X" && button17.Text == "X" && button18.Text == "X")
+            {
+                label4.Text = "Jogador X Venceu!!!";
+                venc = true;
+                label3.Visible = false;
+            }
+            else if(button19.Text == "X" && button20.Text == "X" && button21.Text == "X")
+            {
+                label4.Text = "Jogador X Venceu!!!";
+                venc = true;
+                label3.Visible = false;
+            }
+            else if (button22.Text == "X" && button23.Text == "X" && button24.Text == "X")
+            {
+                label4.Text = "Jogador X Venceu!!!";
+                venc = true;
+                label3.Visible = false;
+            }
+            else if (button16.Text == "X" && button19.Text == "X" && button22.Text == "X")
+            {
+                label4.Text = "Jogador X Venceu!!!";
+                venc = true;
+                label3.Visible = false;
+            }
+            else if (button17.Text == "X" && button20.Text == "X" && button23.Text == "X")
+            {
+                label4.Text = "Jogador X Venceu!!!";
+                venc = true;
+                label3.Visible = false;
+            }
+            else if (button18.Text == "X" && button21.Text == "X" && button24.Text == "X")
+            {
+                label4.Text = "Jogador X Venceu!!!";
+                venc = true;
+                label3.Visible = false;
+            }
+            else if (button16.Text == "X" && button20.Text == "X" && button24.Text == "X")
+            {
+                label4.Text = "Jogador X Venceu!!!";
+                venc = true;
+                label3.Visible = false;
+            }
+            else if (button18.Text == "X" && button20.Text == "X" && button22.Text == "X")
+            {
+                label4.Text = "Jogador X Venceu!!!";
+                venc = true;
+                label3.Visible = false;
+            }
+            else if (button16.Text != "" && button17.Text != "" && button18.Text != "" && button19.Text != "" && button20.Text != "" && button21.Text != "" && button22.Text != "" && button23.Text != "" && button24.Text != "" && venc == false)
+            {
+                label4.Text = "Deu Velha, Parça!!!";
+                venc = true;
+                label3.Visible = false;
+            }
+        }
+        private void Vencex()
+        {
+            if (button6.Text == "X" && button7.Text == "X" && button8.Text == "X")
+            {
+                label4.Text = "Jogador X Venceu!!!";
+                venc = true;
+                label3.Visible = false;
+            }
+            else if (button9.Text == "X" && button10.Text == "X" && button11.Text == "X")
+            {
+                label4.Text = "Jogador X Venceu!!!";
+                venc = true;
+                label3.Visible = false;
+            }
+            else if (button12.Text == "X" && button13.Text == "X" && button14.Text == "X")
+            {
+                label4.Text = "Jogador X Venceu!!!";
+                venc = true;
+                label3.Visible = false;
+            }
+            else if (button6.Text == "X" && button9.Text == "X" && button12.Text == "X")
+            {
+                label4.Text = "Jogador X Venceu!!!";
+                venc = true;
+                label3.Visible = false;
+            }
+            else if (button7.Text == "X" && button10.Text == "X" && button13.Text == "X")
+            {
+                label4.Text = "Jogador X Venceu!!!";
+                venc = true;
+                label3.Visible = false;
+            }
+            else if (button8.Text == "X" && button11.Text == "X" && button14.Text == "X")
+            {
+                label4.Text = "Jogador X Venceu!!!";
+                venc = true;
+                label3.Visible = false;
+            }
+            else if (button6.Text == "X" && button10.Text == "X" && button14.Text == "X")
+            {
+                label4.Text = "Jogador X Venceu!!!";
+                venc = true;
+                label3.Visible = false;
+            }
+            else if (button8.Text == "X" && button10.Text == "X" && button12.Text == "X")
+            {
+                label4.Text = "Jogador X Venceu!!!";
+                venc = true;
+                label3.Visible = false;
+            }
+            else if (button6.Text != "" && button7.Text != "" && button8.Text != "" && button9.Text != "" && button10.Text != "" && button11.Text != "" && button12.Text != "" && button13.Text != "" && button14.Text != "" && venc == false)
+            {
+                label4.Text = "Deu Velha, Parça!!!";
+                venc = true;
+                label3.Visible = false;
+            }
+        }
+    
+        private void Venceo()
+        {
+            if (button6.Text == "O" && button7.Text == "O" && button8.Text == "O")
+            {
+                label4.Text = "Jogador O Venceu!!!";
+                venc = true;
+                label3.Visible = false;
+            }
+            else if (button9.Text == "O" && button10.Text == "O" && button11.Text == "O")
+            {
+                label4.Text = "Jogador O Venceu!!!";
+                venc = true;
+                label3.Visible = false;
+            }
+            else if (button12.Text == "O" && button13.Text == "O" && button14.Text == "O")
+            {
+                label4.Text = "Jogador O Venceu!!!";
+                venc = true;
+                label3.Visible = false;
+            }
+            else if (button6.Text == "O" && button9.Text == "O" && button12.Text == "O")
+            {
+                label4.Text = "Jogador O Venceu!!!";
+                venc = true;
+                label3.Visible = false;
+            }
+            else if (button7.Text == "O" && button10.Text == "O" && button13.Text == "O")
+            {
+                label4.Text = "Jogador O Venceu!!!";
+                venc = true;
+                label3.Visible = false;
+            }
+            else if (button8.Text == "O" && button11.Text == "O" && button14.Text == "O")
+            {
+                label4.Text = "Jogador O Venceu!!!";
+                venc = true;
+                label3.Visible = false;
+            }
+            else if (button6.Text == "O" && button10.Text == "O" && button14.Text == "O")
+            {
+                label4.Text = "Jogador O Venceu!!!";
+                venc = true;
+                label3.Visible = false;
+            }
+            else if (button8.Text == "O" && button10.Text == "O" && button12.Text == "O")
+            {
+                label4.Text = "Jogador O Venceu!!!";
+                venc = true;
+                label3.Visible = false;
+            }
+            else if (button6.Text != "" && button7.Text != "" && button8.Text != "" && button9.Text != "" && button10.Text != "" && button11.Text != "" && button12.Text != "" && button13.Text != "" && button14.Text != "" && venc == false)
+            {
+                label4.Text = "Deu Velha, Parça!!!";
+                venc = true;
+                label3.Visible = false;
+            }
+        }
+        private void mostram()
+        {
+            button16.Visible = true;
+            button17.Visible = true;
+            button18.Visible = true;
+            button19.Visible = true;
+            button20.Visible = true;
+            button21.Visible = true;
+            button23.Visible = true;
+            button22.Visible = true;
+            button24.Visible = true;
+            label2.Visible = false;
+        }
+        
+        private void Venceo2()
+        {
+            if (button16.Text == "O" && button17.Text == "O" && button18.Text == "O")
+            {
+                label4.Text = "Jogador O Venceu!!!";
+                venc = true;
+                label3.Visible = false;
+            }
+            else if (button19.Text == "O" && button20.Text == "O" && button21.Text == "O")
+            {
+                label4.Text = "Jogador O Venceu!!!";
+                venc = true;
+                label3.Visible = false;
+            }
+            else if (button22.Text == "O" && button23.Text == "O" && button24.Text == "O")
+            {
+                label4.Text = "Jogador O Venceu!!!";
+                venc = true;
+                label3.Visible = false;
+            }
+            else if (button16.Text == "O" && button19.Text == "O" && button22.Text == "O")
+            {
+                label4.Text = "Jogador O Venceu!!!";
+                venc = true;
+                label3.Visible = false;
+            }
+            else if (button17.Text == "O" && button20.Text == "O" && button23.Text == "O")
+            {
+                label4.Text = "Jogador O Venceu!!!";
+                venc = true;
+                label3.Visible = false;
+            }
+            else if (button18.Text == "O" && button21.Text == "O" && button24.Text == "O")
+            {
+                label4.Text = "Jogador O Venceu!!!";
+                venc = true;
+                label3.Visible = false;
+            }
+            else if (button16.Text == "O" && button20.Text == "O" && button24.Text == "O")
+            {
+                label4.Text = "Jogador O Venceu!!!";
+                venc = true;
+                label3.Visible = false;
+            }
+            else if (button18.Text == "O" && button20.Text == "O" && button22.Text == "O")
+            {
+                label4.Text = "Jogador O Venceu!!!";
+                venc = true;
+                label3.Visible = false;
+            }
+            else if (button16.Text != "" && button17.Text != "" && button18.Text != "" && button19.Text != "" && button20.Text != "" && button21.Text != "" && button22.Text != "" && button23.Text != "" && button24.Text != "" && venc == false)
+            {
+                label4.Text = "Deu Velha, Parça!!!";
+                venc = true;
+                label3.Visible = false;
+            }
+        }
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void button17_Click(object sender, EventArgs e)
+        {
+            if (botao17 == false && venc == false)
+            {
+                button17.Text = x;
+                botao17 = true;
+                Vencex2();
+                vezbot();
+            }
+            Venceo2();
+        }
+
+        private void button18_Click(object sender, EventArgs e)
+        {
+            if (botao18 == false && venc == false)
+            {
+                button18.Text = x;
+                botao18 = true;
+                Vencex2();
+                vezbot();
+            }
+
+            Venceo2();
+        }
+
+        private void button19_Click(object sender, EventArgs e)
+        {
+            if (botao19 == false && venc == false)
+            {
+                button19.Text = x;
+                botao19 = true;
+                Vencex2();
+                vezbot();
+            }
+
+            Venceo2();
+        }
+
+        private void button20_Click(object sender, EventArgs e)
+        {
+            if (botao20 == false && venc == false)
+            {
+                button20.Text = x;
+                botao20 = true;
+                Vencex2();
+                vezbot();
+            }
+            Venceo2();
+        }
+
+        private void button21_Click(object sender, EventArgs e)
+        {
+            if (botao21 == false && venc == false)
+            {
+                button21.Text = x;
+                botao21 = true;
+                Vencex2();
+                vezbot();
+
+            }
+            Venceo2();
+        }
+
+        private void button22_Click(object sender, EventArgs e)
+        {
+            if (botao22 == false && venc == false)
+            {
+                button22.Text = x;
+                botao22 = true;
+                Vencex2();
+                vezbot();
+            }
+            Venceo2();
+        }
+
+        private void button23_Click(object sender, EventArgs e)
+        {
+            if (botao23 == false && venc == false)
+            {
+                button23.Text = x;
+                botao23 = true;
+                Vencex2();
+                vezbot();
+            }
+            Venceo2();
+        }
+
+        private void button24_Click(object sender, EventArgs e)
+        {
+            if (botao24 == false && venc == false)
+            {
+                button24.Text = x;
+                botao24 = true;
+                Vencex2();
+                vezbot();
+            }
+            Venceo2();
+        }
+
+        private void button25_Click(object sender, EventArgs e)
+        {
+            label3.Visible = false;
+            button1.Visible = true;
+            button2.Visible = true;
+            label2.Visible = true;
+            label2.Text = "O que deseja jogar?";
+            botao16 = false;
+            botao17 = false;
+            botao18 = false;
+            botao19 = false;
+            botao20 = false;
+            botao21 = false;
+            botao22 = false;
+            botao23 = false;
+            botao24 = false;
+            venc = false;
+            button16.Visible = false;
+            button17.Visible = false;
+            button18.Visible = false;
+            button19.Visible = false;
+            button20.Visible = false;
+            button21.Visible = false;
+            button22.Visible = false;
+            button23.Visible = false;
+            button24.Visible = false;
+            button16.Text = "";
+            button17.Text = "";
+            button18.Text = "";
+            button19.Text = "";
+            button20.Text = "";
+            button21.Text = "";
+            button22.Text = "";
+            button23.Text = "";
+            button24.Text = "";
+            label4.Text = "";
+            button25.Visible = false;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            button1.Visible = false;
+            button2.Visible = false;
+            label2.Text = "Qual Dificuldade";
+            button3.Visible = true;
+            button4.Visible = true;
+            button5.Visible = true;
+            vec = "X";
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            button15.Visible = true;
+            button1.Visible = false;
+            button2.Visible = false;
+            label2.Visible = false;
+            button6.Visible = true;
+            button7.Visible = true;
+            button8.Visible = true;
+            button9.Visible = true;
+            button10.Visible = true;
+            button11.Visible = true;
+            button12.Visible = true;
+            button13.Visible = true;
+            button14.Visible = true;
+            label3.Visible = true;
+            vec = "X";
+            label3.Text = "Jogador X";
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            dif = "e";
+            button3.Visible = false;
+            button4.Visible = false;
+            button5.Visible = false;
+            mostram();
+            button25.Visible = true;
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            dif = "m";
+            button3.Visible = false;
+            button4.Visible = false;
+            button5.Visible = false;
+            mostram();
+            button25.Visible = true;
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            dif = "h";
+            button3.Visible = false;
+            button4.Visible = false;
+            button5.Visible = false;
+            mostram(); 
+            button25.Visible = true;
+        }
+
+        public void button9_Click(object sender, EventArgs e)
+        {
+            if (vec == "X" && botao9 == false && venc == false)
+            {
+                button9.Text = x;
+                botao9 = true;
+                label3.Text = "Jogador O";
+                vec = o;
+                Vencex();
+            }
+            else if(botao9 == false && venc == false)
+            {
+                vec = x;
+                button9.Text = o;
+                label3.Text = "Jogador X";
+                botao9 = true;
+                Venceo();
+            }
+        }
+
+        private void button15_Click(object sender, EventArgs e)
+        {
+            label3.Visible = false;
+            button1.Visible = true;
+            button2.Visible = true;
+            label2.Visible = true;
+            label2.Text = "O que deseja jogar?";
+            botao6 = false;
+            botao7 = false;
+            botao8 = false;
+            botao9 = false;
+            botao10 = false;
+            botao11 = false;
+            botao12 = false;
+            botao13 = false;
+            botao14 = false;
+            venc = false;
+            button6.Visible = false;
+            button7.Visible = false;
+            button8.Visible = false;
+            button9.Visible = false;
+            button10.Visible = false;
+            button11.Visible = false;
+            button12.Visible = false;
+            button13.Visible = false;
+            button14.Visible = false;
+            button6.Text = "";
+            button7.Text = "";
+            button8.Text = "";
+            button9.Text = "";
+            button10.Text = "";
+            button11.Text = "";
+            button12.Text = "";
+            button13.Text = "";
+            button14.Text = "";
+            label4.Text = "";
+            button15.Visible = false;
+        }
+
+        private void button16_Click(object sender, EventArgs e)
+        {
+            if (botao16 == false && venc == false)
+            {
+                button16.Text = x;
+                botao16 = true;
+                Vencex2();
+                vezbot();
+            }
+            Venceo2();
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            if (vec == "X" && botao13 == false && venc == false)
+            {
+                button13.Text = x;
+                label3.Text = "Jogador O";
+                botao13 = true;
+                vec = o;
+                Vencex();
+            }
+            else if (botao13 == false && venc == false)
+            {
+                vec = x;
+                button13.Text = o;
+                label3.Text = "Jogador X";
+                botao13 = true;
+                Venceo();
+            }
+        }
+        private void button12_Click(object sender, EventArgs e)
+        {
+            if (vec == "X" && botao12 == false && venc == false)
+            {
+                button12.Text = x;
+                botao12 = true;
+                label3.Text = "Jogador O";
+                vec = o;
+                Vencex();
+
+            }
+            else if (botao12 == false && venc == false)
+            {
+                vec = x;
+                button12.Text = o;
+                label3.Text = "Jogador X";
+                botao12 = true;
+                Venceo();
+
+            }
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            if (vec == "X" && botao11 == false && venc == false)
+            {
+                button11.Text = x;
+                label3.Text = "Jogador O";
+                botao11 = true;
+                vec = o;
+                Vencex();
+
+                
+            }
+            else if (botao11 == false && venc == false)
+            {
+                vec = x;
+                button11.Text = o;
+                label3.Text = "Jogador X";
+                botao11 = true;
+                Venceo();
+                
+
+            }
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            if (vec == "X" && botao10 == false && venc == false)
+            {
+                button10.Text = x;
+                label3.Text = "Jogador O";
+                botao10 = true;
+                vec = o;
+                Vencex();
+
+            }
+            else if (botao10 == false && venc == false)
+            {
+                vec = x;
+                button10.Text = o;
+                botao10 = true;
+                label3.Text = "Jogador X";
+                Venceo(); 
+
+            }
+
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            if (vec == "X" && botao8 == false && venc == false)
+            {
+                button8.Text = x;
+                label3.Text = "Jogador O";
+                botao8 = true;
+                vec = o;
+                Vencex();
+
+            }
+            else if (botao8 == false && venc == false)
+            {
+                vec = x;
+                button8.Text = o;
+                botao8 = true;
+                label3.Text = "Jogador X";
+                Venceo();
+
+            }
+
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            if (vec == "X" && botao7 == false && venc == false)
+            {
+                button7.Text = x;
+                label3.Text = "Jogador O";
+                botao7 = true;
+                vec = o;
+                Vencex();
+
+            }
+            else if (botao7 == false && venc == false)
+            {
+                vec = x;
+                button7.Text = o;
+                botao7 = true;
+                label3.Text = "Jogador X";
+                Venceo();
+
+            }
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            if (vec == "X" && botao6 == false && venc == false)
+            {
+                button6.Text = x;
+                botao6 = true;
+                label3.Text = "Jogador O";
+                vec = o;
+                Vencex();
+
+            }
+            else if (botao6 == false && venc == false)
+            {
+                vec = x;
+                button6.Text = o;
+                botao6 = true;
+                label3.Text = "Jogador X";
+                Venceo();
+
+            }
+            
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            if (vec == "X" && botao14 == false && venc == false)
+            {
+                button14.Text = x;
+                label3.Text = "Jogador O";
+                botao14 = true;
+                vec = o;
+                Vencex();
+
+            }
+            else if (botao14 == false && venc == false)
+            {
+                vec = x;
+                button14.Text = o;
+                botao14 = true;
+                label3.Text = "Jogador X";
+                Venceo();
+
+            }
+            
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+    }
+}
